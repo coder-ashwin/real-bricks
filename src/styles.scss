@@ -1,1 +1,198 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: LatoBlack;
+  src: url('fonts/Lato-Black.ttf');
+}
+
+@font-face {
+  font-family: LatoMedium;
+  src: url('fonts/Lato-Medium.ttf');
+}
+
+@font-face {
+  font-family: LatoBold;
+  src: url('fonts/Lato-Semibold.ttf');
+}
+
+html, body { height: 100%; background-color: #F5F5F5; overflow-x: hidden; }
+html { overflow-y: hidden; }
+body { margin: 0; font-family: LatoBlack; overflow-y: overlay; }
+
+.quote {
+  p {
+    font-size: 1.15em;
+    line-height: 1.25em;
+    margin-top: 4%;
+    color: white;
+  }
+  
+  h4 {
+    font-family: LatoMedium;
+    color: #E84145;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 1%;
+  }
+}
+
+section {
+  p {
+    color: #1E1E1E;
+    text-transform: uppercase;
+    font-weight: 900;
+    display: block;
+    width: 100%;
+    letter-spacing: 2px;
+  }
+
+  span {
+    font-size: large;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+
+  hr {
+    background-color: #C4C4C4;
+    height: 1px;
+    border: none;
+  }
+
+  .insz {
+    width: 95%;
+    margin: 2% auto 6.5%;
+    display: block;
+  }
+
+  button {
+    display: block;
+    margin: 25px auto 0;
+    padding: 5px 30px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #E84145;
+    border: 1px solid #E84145;
+    color: white;
+    transition: all 0.5s;
+  }
+
+  button:hover {
+    background-color: white;
+    color: #E84145;
+  }
+
+  button:focus {
+    background-color: #E84145;
+    color: white;
+  }
+
+  button:focus:hover {
+    background-color: white;
+    color: #E84145;
+  }
+}
+
+
+::-webkit-scrollbar-track {
+  margin: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  background: #1E1E1E;
+
+  &:hover {
+    background: #333; 
+  }
+}
+
+::selection {
+  background-color: #E84145;
+  color: #FFFFFF;
+}
+
+#toast-container {
+  right: auto !important;
+  left: 7%;
+}
+
+.themeToast {
+  font-family: LatoBlack;
+  letter-spacing: 1.5px;
+  background-color: #1E1E1E !important;
+}
+
+.row .col.s3 {
+    width: 24% !important;
+    margin-right: 1%;
+}
+
+.row .col.s8 {
+  width: 65.6666666667% !important;
+  margin-right: 1%;
+}
+
+#loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 0;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  img {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    height: 200px;
+    opacity: 0.75;
+  }
+}
+
+#network {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4.5px);
+  margin: 0;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  div {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      text-align: center;
+      background-color: transparent;
+
+      img {
+          width: 50px;
+          height: 50px;
+          display: block;
+          margin: 15px auto;
+      }
+
+      span {
+          color: #FFFFFF;
+          font-size: 25px;
+          letter-spacing: 4px;
+          text-transform: capitalize;
+      }
+  }
+}
+
+// RADIO BUTTON - D9D9D9
+// TEXT - C5C5C5

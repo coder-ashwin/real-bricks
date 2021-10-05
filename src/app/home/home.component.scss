@@ -1,0 +1,50 @@
+div {
+    cursor: pointer;
+    margin: 50px auto;
+    outline: none;
+
+    h4, h6 {
+        text-align: center;
+        font-weight: 900;
+    }
+
+    h4 {
+        font-family: LatoBold;
+        text-transform: uppercase;
+        letter-spacing: 7px;
+    }
+
+    h6 {
+        letter-spacing: 3px;
+    }
+}
+
+p {
+    text-align: justify;
+    text-transform: none;
+}
+
+ol {
+    margin: 15px 30px 45px 15px;
+
+    li {
+        font-family: LatoBold;
+        width: 48%;
+        display: inline-block;
+
+        img {
+            display: block;
+            width: 25%;
+            margin: 15px auto;
+        }
+
+        h6 {
+            text-align: center;
+        }
+
+        p {
+            font-family: LatoBlack;
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,110 @@
+<br />
+<br />
+
+<div class="heading"><span>personal details</span><div>
+    <span *ngIf="!edit1" (click)="cancel()">cancel</span>
+    <span *ngIf="!edit1" (click)="save()">save</span>
+    <span (click)="edit1 = false;" *ngIf="edit1"><img src="../../assets/edit.png" alt="edit" /> edit</span>
+</div></div>
+<div class="insz">
+    <div class="col s12">
+        <span>name</span>
+        <input type="text" [(ngModel)]="name" autocomplete="disabled" [readonly]="edit1" />
+    </div>
+    <div class="col s12">
+        <span>email</span>
+        <input type="text" [(ngModel)]="email" autocomplete="disabled" readonly="true" />
+    </div>
+    <div class="col s3">
+        <span>gender</span>
+        <input type="text" [(ngModel)]="gender" autocomplete="disabled" [readonly]="edit1" />
+    </div>
+    <div class="col s3">
+        <span>age</span>
+        <input type="text" [(ngModel)]="age" autocomplete="disabled" [readonly]="edit1" (keypress)="keyPressNumbers($event)" (paste)="disablePaste($event)" />
+    </div>
+    <div class="col s6">
+        <span>mobile number</span>
+        <input type="text" [(ngModel)]="mobile" autocomplete="disabled" [readonly]="edit1" (keypress)="keyPressNumbers($event)" (paste)="disablePaste($event)" />
+    </div>
+</div>
+
+
+<div class="col s12">
+    <p>manage your addresses</p>
+</div>
+<div class="addr">
+    <div class="col s4" *ngFor="let add of load.user['address'] | keyvalue">
+        <div>
+            <h6>{{ add.value["site"] }}</h6>
+            <span>
+                {{ add.value["line1"] }}, 
+                {{ add.value["line2"] }}, 
+                {{ add.value["district"] }}, 
+                {{ add.value["state"] }}.
+                <br />
+                {{ add.value["pincode"] }}.
+            </span>
+            <p (click)="edit(add.key)">edit</p>
+            <h5 (click)="delete = add.key; showcon = true">X</h5>
+        </div>
+    </div>
+</div>
+<br />
+<div class="col s12" align="center" *ngIf="length(load.user['address'])">
+    <a (click)="load.showadd = true">+add new delivery address</a>
+</div>
+
+<div class="col s12">
+    <p>change password</p>
+</div>
+<div class="insz">
+    <div class="col s12">
+        <span>current password</span>
+        <input type="password" [(ngModel)]="passcu" autocomplete="disabled" />
+    </div>
+    <div class="col s12">
+        <span>new password</span>
+        <input type="password" [(ngModel)]="passne" autocomplete="disabled" />
+    </div>
+    <div class="col s12">
+        <span>confirm password</span>
+        <input type="password" [(ngModel)]="passco" autocomplete="disabled" />
+    </div>
+    <div class="col s12">
+        <button (click)="reset()">reset password</button>
+    </div>
+</div>
+
+<div id="confirm" [@fade]="showcon">
+    <div>
+        <p>Are you sure you want to delete the address?</p>
+    
+        <div class="buttons" align="center">
+            <button (click)="yes()">yes</button>
+            <button (click)="delete = ''; showcon = false">no</button>
+        </div>
+    </div>
+</div>
+
+<app-address [@fade]="load.showadd"></app-address>
+
+<div id="drop" [@fade]="load.showimg">
+    <div>
+        <p>profile picture</p>
+
+        <div (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)" [@collapseSide2]="tempsrc != null">
+            <span>add / drop file here</span>
+            <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
+        </div>
+
+        <figure [@collapseSide1]="tempsrc != null">
+            <img *ngIf="tempsrc != null" [src]="tempsrc" alt="profile photo">
+        </figure>
+    
+        <div class="buttons" align="center">
+            <button (click)="file ? upload() : fileInput.click()">{{ file ? 'upload' : 'browse' }}</button>
+            <button (click)="imgcancel()">cancel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,594 @@
+main {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    .pic {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        overflow: hidden;
+        padding-left: 14%;
+
+        > .border {
+            position: absolute;
+            height: 100%;
+            width: 453px;
+            border-radius: 50%;
+            border: 3.5px solid;
+            border-top-color: transparent;
+            border-right-color: #E84145;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            transform: scale(1.35) translateX(4.5%);
+            transform-origin: 50% 10%;
+        }
+
+        figure {
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0;
+            transform: scale(1.35);
+            transform-origin: 50% 10%;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        h4 {
+            position: absolute;
+            top: 42%;
+            left: 52%;
+            font-family: 'LatoBold';
+            text-transform: uppercase;
+            letter-spacing: 15px;
+            line-height: 125%;
+        }
+    }
+
+    .edt {
+        position: absolute;
+        bottom: 5%;
+        left: 2%;
+    
+        span {
+            font-family: 'LatoBold';
+            letter-spacing: 3px;
+            color: #222;
+            text-transform: uppercase;
+            font-size: 17px;
+            cursor: pointer;
+    
+            img {
+                width: 15px;
+            }
+        }
+    }
+
+    > figure {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-size: cover !important;
+        background-position: 50% 55% !important;
+        transform-origin: 50% 100%;
+        box-shadow: -5px -5px 7px rgba(0, 0, 0, 0.397) inset;
+    }
+
+    div.menu {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+
+        > img {
+            width: 9%;
+            position: absolute;
+            top: 0;
+            left: 5%;
+            outline: none;
+            border: none;
+        }
+
+        > ul {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: 5%;
+            background-color: #1E1E1E;
+            list-style-type: none;
+
+            li {
+                font-family: LatoBold;
+                position: relative;
+                display: inline-block;
+                color: #EEEEEE;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                cursor: pointer;
+                outline: none;
+                border: none;
+                transition: all 0.25s;
+
+                button {
+                    font-family: LatoBold;
+                    padding: 5px 30px;
+                    border-radius: 15px;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    background-color: #E84145;
+                    color: #EEEEEE;
+                    transition: all 0.5s;
+                }
+
+                figure {
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -15%;
+                    left: -20%;
+                    border: 4px solid #1E1E1E;
+                    overflow: hidden;
+                    transition: all 0.25s;
+
+                    img {
+                        width: 30px;
+                    }
+                }
+
+                span {
+                    margin-left: 25px;
+                    color: #E84145;
+                    text-transform: capitalize;
+                }
+
+                > ul {
+                    position: absolute;
+                    width: 120%;
+                    top: 200%;
+                    left: -10%;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.25s;
+
+                    li {
+                        background-color: #535353;
+                        color: #F5F5F5;
+                        width: 100%;
+                        margin-top: 10px;
+                        padding: 5px 0;
+                        border-left: 5px solid #535353;
+                        letter-spacing: 1px;
+                        text-align: center;
+                    }
+                    li:hover {
+                        border-left: 5px solid #E84145;
+                    }
+                }
+            }
+
+            li.active:after {
+                content: '';
+                position: absolute;
+                height: 4px;
+                width: 80%;
+                background-color: #E84145;
+                bottom: 0;
+                left: 10%;
+            }
+
+            li:not(:last-child) {
+                padding: 15px 30px;
+            }
+
+            li:last-child {
+                padding: 11px 30px;
+            }
+
+            li:not(:last-child):hover {
+                background-color: white;
+                color: #E84145;
+
+                figure {
+                    border: 4px solid white;
+                }
+
+                > ul {
+                    top: 100%;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            li:last-child:hover button {
+                background-color: white;
+                color: #E84145;
+            }
+        }
+    }
+
+    div.quote {
+        background-color: #1E1E1E;
+        position: absolute;
+        bottom: -20%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 2% 4%;
+        font-size: large;
+        letter-spacing: 1px;
+        box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.397);
+        width: 60%;
+        text-align: center;
+
+        button {
+            display: block;
+            margin: 15px auto;
+            padding: 10px 40px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            background-color: #E84145;
+            border: 1px solid #E84145;
+            color: white;
+            transition: all 0.5s;
+        }
+      
+        button:hover {
+            background-color: white;
+            color: #E84145;
+        }
+      
+        button:focus {
+            background-color: #E84145;
+            color: white;
+        }
+
+        button:focus:hover {
+            background-color: white;
+            color: #E84145;
+        }
+    }
+
+    div.head {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.5);
+        width: 100%;
+        
+        h1, h6 {
+            color: #FFFFFF;
+            text-align: center;
+            margin: 10px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: LatoBold;
+            letter-spacing: 16px;
+            // text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+            font-size: 6em;
+        }
+
+        h6 {
+            letter-spacing: 16px;
+            // text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.45);
+            font-weight: 900;
+        }
+    }
+}
+
+section {
+    margin-top: 2%;
+}
+
+footer {
+    position: relative;
+    background-color: #222222;
+    color: #FFFFFF;
+    padding-top: 3%;
+
+    > span {
+        position: absolute;
+        bottom: 1%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 13px;
+        letter-spacing: 2px;
+
+        a {
+            font-size: 18px;
+            letter-spacing: 20px;
+            color: #E84145;
+        }
+    }
+
+    .container {
+        width: 90%;
+        
+        .row {
+            margin-bottom: 0;
+
+            .s6 {
+                border-left: 2px solid grey;
+                border-right: 2px solid grey;
+            }
+        }
+    }
+
+    h6 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    ul {
+        li {
+            padding: 5px;
+
+            img {
+                width: 35px;
+                display: inline-block;
+            }
+
+            span {
+                display: inline-block;
+                padding-left: 10px;
+                letter-spacing: 1px;
+            }
+        }
+
+        li:not(:first-child) {
+            span {
+                transform: translateY(-13px);
+            }
+        }
+    }
+
+    ol {
+        list-style: none;
+        text-align: center;
+        margin: 15% 0;
+        padding-left: 0;
+
+        li {
+            display: inline-block;
+            padding: 25px 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.25s;
+            outline: none;
+        }
+
+        li:hover {
+            color: #E84145;
+        }
+    }
+
+    figure {
+        margin-top: 0;
+
+        img {
+            height: 200px;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        letter-spacing: 1px;
+        text-align: center;
+        margin-top: 0;
+
+        strong {
+            font-size: 24px;
+            letter-spacing: 5px;
+        }
+    }
+}
+
+#login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 2;
+
+    > div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        background-color: #F5F5F5;
+        padding: 4% 0;
+        box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.397);
+
+        h5 {
+            font-weight: 600;
+            text-transform: uppercase;
+            position: relative;
+            text-align: center;
+            margin: 0 0 4%;
+        }
+
+        h5:after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            height: 2px;
+            width: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #E84145;
+        }
+        
+        input[type="text"], input[type="email"], input[type="password"] {
+            background-color: white;
+            border: none;
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+            outline: none;
+            border: none;
+        }
+        
+        input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+            border-bottom: none;
+            box-shadow: none;
+        }
+
+        input[type="text"]:read-only {
+            cursor: default;
+            background-color: #EEE;
+        }
+        
+        ::placeholder {
+            color: #C4C4C4;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 1; 
+            transition: all 0.25s;
+        }
+        
+        *:focus::placeholder { 
+            opacity: 0; 
+        }
+
+        button {
+          display: block;
+          margin: 10px auto;
+          padding: 10px 40px;
+          outline: none;
+          border: none;
+          cursor: pointer;
+          font-weight: 600;
+          text-transform: uppercase;
+          background-color: #E84145;
+          border: 1px solid #E84145;
+          color: white;
+          transition: all 0.5s;
+        }
+      
+        button:hover {
+          background-color: white;
+          color: #E84145;
+        }
+      
+        button:focus {
+          background-color: #E84145;
+          color: white;
+        }
+
+        button:focus:hover {
+            background-color: white;
+            color: #E84145;
+        }
+
+        span {
+            display: block;
+            text-transform: uppercase;
+            font-weight: 900;
+            transform: scale(0.75);
+            text-align: center;
+            letter-spacing: 3px;
+            cursor: pointer;
+
+            strong {
+                font-weight: 900;
+                color: #E84145;
+                border-bottom: 1px solid #F5F5F5;
+                transition: all 0.3s;
+            }
+        }
+
+        span:hover strong {
+            border-bottom: 1px solid #222222;
+        }
+
+        a {
+            color: #222222;
+            border-bottom: 1px solid #F5F5F5;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 5px;
+            transform: scale(0.75);
+            transform-origin: 25% 50%;
+            display: inline-block;
+        }
+        a:not(.time):hover {
+            border-bottom: 1px solid #222222;
+        }
+
+        a.time {
+            cursor: default;
+        }
+
+        h6 {
+            display: none;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 7px;
+            margin-top: 15%;
+            transform: scale(0.75);
+        }
+
+        .icons {
+            display: none;
+            text-align: center;
+            margin: 0 auto;
+
+            div {
+                padding: 5px 50px;
+                cursor: pointer;
+                display: inline-block;
+
+                img {
+                    height: 25px;
+                    width: auto;
+                }
+            }
+
+            div:first-child {
+                background-color: #3B5998;
+            }
+
+            div:last-child {
+                background-color: #FFFFFF;
+            }
+        }
+    }
+}
+
+@keyframes zooming {
+    from {transform: scale(1.65);}
+    to {transform: scale(1);}
+}
+
+@keyframes glare {
+    from {left: -50%; top: 0%;}
+    to {left: 50%; top: 100%;}
+}

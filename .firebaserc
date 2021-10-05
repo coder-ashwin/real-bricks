@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "real-bricks": {
+      "hosting": {
+        "real-bricks": [
+          "real-bricks"
+        ]
+      }
+    }
+  }
+}

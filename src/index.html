@@ -2,12 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>RealBricks</title>
+  <title>Real Bricks</title>
   <base href="/">
+  <meta name="description" content="We at Real Bricks help you build your dream home one brick at a time!\r\nWe understand your need for quality materials and you are at the right place if you want bricks which will serve you for ages.">
+  <meta name="keywords" content="real bricks, realbricks, bricks, cement, construction, construction materials">
+  <meta name="author" content="Ashwin N">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    #loader {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 1);
+      margin: 0;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+    }
+
+    #loader img {
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      height: 200px;
+      opacity: 0.75;
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>
+    <div id="loader">
+      <img src="./assets/loader.gif" alt="Loading...">
+    </div>
+  </app-root>
 </body>
 </html>

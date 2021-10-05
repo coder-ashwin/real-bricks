@@ -1,0 +1,32 @@
+p {
+    text-align: justify;
+    text-transform: none;
+}
+
+ol {
+    margin: 30px 30px 30px 15px;
+    list-style-type: none;
+
+    li {
+        font-family: LatoBold;
+
+        h6 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        img {
+            display: inline-block;
+            width: 23%;
+            margin: 0 1%;
+        }
+
+        p {
+            font-family: LatoBlack;
+            display: inline-block;
+            width: 71%;
+            vertical-align: text-bottom;
+            margin: 8% 2%;
+        }
+    }
+}

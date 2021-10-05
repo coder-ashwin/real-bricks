@@ -1,0 +1,86 @@
+<div class="col s10">
+    <h6>Inventory</h6>
+
+    <div class="subhead">
+        <span>all item view</span>
+        <div>
+            <div (click)="productIndex = products.length">
+                <div>
+                    <span>+</span>
+                </div>
+                <span>add product</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="products">
+        <div *ngFor="let product of products; let i = index" (click)="productIndex = i" 
+            [ngClass]="productIndex == i ? 'active' : ''">
+
+        </div>
+        <div class="extra" *ngFor="let product of productsExtra">
+            <img />
+            <br />
+            <span>product</span>
+        </div>
+    </div>
+    <!-- *ngIf="productIndex != -1" -->
+    <ng-container>
+        <div class="subhead">
+            <span>details of product</span>
+            <div>
+                <div class="switch" *ngIf="products[productIndex]">
+                    <label>
+                        <input type="checkbox" [(ngModel)]="edit" autocomplete="disabled" />
+                        <span class="lever"></span>
+                        edit view
+                    </label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="detail">
+            <div class="col s3">
+                <div>
+                    <p>product name</p>
+                    <input type="text" [(ngModel)]="name" autocomplete="disabled" [readonly]="!edit" />
+                </div>
+                <div>
+                    <p>product image</p>
+                    <figure>
+                        <img src="" alt="" />
+                        <span>upload image</span>
+                    </figure>
+                </div>
+                <div>
+                    <p>stock available</p>
+                    <input type="text" [(ngModel)]="stock" autocomplete="disabled" [readonly]="!edit" />
+                </div>
+            </div>
+            <div class="col s9">
+                <div>
+                    <p>product description</p>
+                    <textarea [(ngModel)]="description" autocomplete="disabled" [readonly]="!edit"></textarea>
+                </div>
+                <div>
+                    <div>
+                        <p>quantity conversion</p>
+                        <div>
+                            <input type="text" [(ngModel)]="quantity" autocomplete="disabled" [readonly]="!edit" />
+                            <input type="text" [(ngModel)]="unit" autocomplete="disabled" [readonly]="!edit" />
+                            <label> = 1 load</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p>price per load</p>
+                        <input type="text" [(ngModel)]="price" autocomplete="disabled" [readonly]="!edit" />
+                    </div>
+                </div>
+                <div>
+                    <button (click)="cancel()">cancel</button>
+                    <button (click)="submit()">{{ products[productIndex] ? 'add' : 'update' }}</button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

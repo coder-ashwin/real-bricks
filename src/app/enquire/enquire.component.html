@@ -1,0 +1,85 @@
+<br />
+<br />
+<br />
+
+<p>get in touch</p>
+<div class="insz">
+    <div class="col s12">
+        <input type="radio" [(checked)]="contact" />
+        <span (click)="contact = true;">Let know your presence</span>
+        <hr />
+        <input type="radio" [(checked)]="!contact" />
+        <span (click)="contact = false;">Work with us as a vendor</span>
+    </div>
+</div>
+
+<div [@collapse]="contact">
+    <br />
+    <br />
+    <p>personal details</p>
+    <div class="insz">
+        <div class="col s12">
+            <input type="text" [(ngModel)]="name" placeholder="name" autocomplete="disabled" />
+        </div>
+        <div class="col s12">
+            <input type="email" [(ngModel)]="email" placeholder="email address" autocomplete="disabled" />
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <p>what would you like to say</p>
+    <div class="insz">
+        <div class="col s12">
+            <textarea type="text" [(ngModel)]="message" placeholder="type here..." autocomplete="disabled"></textarea>
+        </div>
+    </div>
+</div>
+
+<div [@collapse]="!contact">
+    <br />
+    <br />
+    <p>personal details</p>
+    <div class="insz">
+        <div class="col s12">
+            <input type="text" [(ngModel)]="name" placeholder="name" autocomplete="disabled" />
+        </div>
+        <div class="col s8">
+            <input type="text" [(ngModel)]="gender" placeholder="gender" autocomplete="disabled" />
+        </div>
+        <div class="col s4">
+            <input type="text" [(ngModel)]="age" placeholder="age" autocomplete="disabled" (keypress)="keyPressNumbers($event)" (paste)="disablePaste($event)" />
+        </div>
+        <div class="col s12">
+            <input type="email" [(ngModel)]="email" placeholder="email address" autocomplete="disabled" />
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p>experiences</p>
+    <div class="insz">
+        <div class="col s8">
+            <input type="text" [(ngModel)]="field" placeholder="field interest" autocomplete="disabled" />
+        </div>
+        <div class="col s4">
+            <input type="text" [(ngModel)]="exp" placeholder="years of experience" autocomplete="disabled" (keypress)="keyPressNumbers($event)" (paste)="disablePaste($event)" />
+        </div>
+    </div>
+    <br />
+    <p>what would you like to say</p>
+    <div class="insz">
+        <div class="col s12">
+            <textarea type="text" [(ngModel)]="message" placeholder="type here..." autocomplete="disabled"></textarea>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+<button>submit</button>

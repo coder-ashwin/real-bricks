@@ -1,0 +1,39 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col s10">
+                <img src="../../assets/logo.png" alt="logo" />
+                <p>admin portal</p>
+            </div>
+            <div class="col s2" align="right">
+                <button>logout</button>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+            <div [class]="'col ' + (pinned ? 's2' : 's1')">
+                <nav>
+                    <img src="../../assets/push-pin.png" alt="dashboard" (click)="pinned = !pinned" />
+                    <ul>
+                        <li *ngFor="let tab of tabs | keyvalue" (click)="currentTab = tab.key" 
+                            [ngClass]="tab.key == currentTab ? 'active' : ''">
+                            <div>
+                                <img [src]="'../../assets/' + tab.value['img'] + '.png'" [alt]="tab.key" />
+                                <span>{{ tab.key }}</span>
+                            </div>
+                            <ul *ngIf="tab.value['details']">
+                                <li *ngFor="let detail of tab.value['details']">{{ detail }}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div [class]="'col ' + (pinned ? 's10' : 's11')">
+                <app-inventory></app-inventory>
+            </div>
+        </div>
+    </div>
+</main>

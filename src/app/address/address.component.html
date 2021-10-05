@@ -1,0 +1,41 @@
+<div id="top">
+    <div class="container">
+        <div class="row">
+            <h6>add your address</h6>
+
+            <p>choose your location on google maps</p>
+
+            <div class="col s12" style="position: relative;">
+                <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" disableDefaultUI="false" (mapReady)="mapReady($event)">
+                    <agm-marker *ngIf="isEmptyObject(marker)" [latitude]="marker['lat']" [longitude]="marker['lng']"></agm-marker>
+                </agm-map>
+
+                <span class="current" (click)="current()">use current location</span>
+            </div>
+            
+            <div class="col s12">
+                <input type="text" [(ngModel)]="site" placeholder="site name" autocomplete="disabled" />
+            </div>
+            <div class="col s12">
+                <input type="text" [(ngModel)]="line1" placeholder="address line 1" autocomplete="disabled" />
+            </div>
+            <div class="col s12">
+                <input type="text" [(ngModel)]="line2" placeholder="address line 2" autocomplete="disabled" />
+            </div>
+            <div class="col s6">
+                <input type="text" [(ngModel)]="district" placeholder="district" autocomplete="disabled" />
+            </div>
+            <div class="col s4">
+                <input type="text" [(ngModel)]="state" placeholder="state" autocomplete="disabled" />
+            </div>
+            <div class="col s2">
+                <input type="text" [(ngModel)]="pincode" placeholder="pincode" autocomplete="disabled" />
+            </div>
+
+            <div class="buttons" align="center">
+                <button (click)="submit()">add address</button>
+                <button (click)="can()">cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

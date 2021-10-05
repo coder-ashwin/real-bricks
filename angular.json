@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "rxjs"
+            ],
             "outputPath": "dist/real-bricks",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -28,9 +31,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/css/materialize.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/js/materialize.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -121,8 +127,13 @@
               "devServerTarget": "real-bricks:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "real-bricks"
 }

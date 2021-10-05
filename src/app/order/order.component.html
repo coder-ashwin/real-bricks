@@ -1,0 +1,107 @@
+<ng-container *ngIf="load.loggedin">
+    <br />
+    <br />
+    <br />
+</ng-container>
+
+<h5 *ngIf="load.loggedin">choose delivery address</h5>
+
+<div class="col s12">
+    <div class="addr" *ngIf="load.loggedin">
+        <div class="col s4" *ngFor="let add of load.user['address'] | keyvalue">
+            <div [class]="add.key == address ? 'active' : ''" (click)="address = add.key">
+                <h6>{{ add.value["site"] }}</h6>
+                <span>
+                    {{ add.value["line1"] }}, 
+                    {{ add.value["line2"] }}, 
+                    {{ add.value["district"] }}, 
+                    {{ add.value["state"] }}.
+                    <br />
+                    {{ add.value["pincode"] }}.
+                </span>
+                <img src="../../assets/line.png" alt="">
+            </div>
+        </div>
+        <br />
+        <div class="col s12" align="center" *ngIf="length(load.user['address'])">
+            <a (click)="load.showadd = true">+add new delivery address</a>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<h5>order details</h5>
+
+<div class="col s1">
+    &nbsp;
+</div>
+
+<div class="col s4">
+    <input type="text" [(ngModel)]="bload" autocomplete="disabled" (keypress)="keyPressNumbers($event)" (paste)="disablePaste($event)" placeholder="number of loads required" />
+    <span>1 load = 1000 bricks</span>
+</div>
+
+<div class="col s1">
+    &nbsp;
+</div>
+
+<div class="col s1">
+    <p>=</p>
+</div>
+
+<div class="col s5">
+    <p>{{ number(bload) }}</p>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<h5>bill of material</h5>
+
+<div class="col s1">
+    &nbsp;
+</div>
+
+<div class="col s7">
+    <table>
+        <tr>
+            <th>s.no</th>
+            <th>item name</th>
+            <th>unit price</th>
+            <th>quantity</th>
+            <th>price</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>brick load</td>
+            <td>&#8377;15299</td>
+            <td>{{ bload ? bload : 0 }}</td>
+            <td>&#8377;{{ price(bload) }}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="col s4">
+    <button (click)="pay()">pay &#8377;{{ price(bload) }}</button>
+    <span>UPI / Net banking / Debit & Credit card</span>
+</div>
+
+<app-address [@fade]="load.showadd"></app-address>
+
+<br />
+<br />
+<br />
+<br />
+<br />
